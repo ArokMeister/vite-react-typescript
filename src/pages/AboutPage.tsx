@@ -31,15 +31,15 @@ export function AboutPage() {
       </div>
       <div className="lg:container grid grid-cols-2 gap-4 mx-auto items-center justify-items-center">
         <p className="font-mono text-center text-2xl m-4">Место для разработки любезно предоставил React</p>
-        <img src="src\assets\react.svg" className="w-36 self-center" />
+        <img src="/react.svg" className="w-36 self-center" />
         <p className="font-mono text-center text-2xl m-4">Сердце этого проекта многогранный TypeScript</p>
-        <img src="src\assets\typescript.svg" className="w-36 text-center animate-pulse" />
+        <img src="/typescript.svg" className="w-36 text-center animate-pulse" />
         <p className="font-mono text-center text-2xl m-4">За визуальные эффекты отвечает Tailwind</p>
-        <img src="src\assets\tailwind.svg" className="w-36 text-center animate-pulse" />
+        <img src="/tailwind.svg" className="w-36 text-center animate-pulse" />
         <p className="font-mono text-center text-2xl m-4">Собирал и упаковывал проект проект шустрый Vite</p>
-        <img src="src\assets\vite.svg" className="w-36 text-center animate-pulse" />
+        <img src="/vite.svg" className="w-36 text-center animate-pulse" />
         <p className="font-mono text-center text-2xl m-4">Все входящие и исходящие запросы обрабатывал Axios</p>
-        <img src="src\assets\axios.svg" className="w-36 text-center animate-pulse" />
+        <img src="/axios.svg" className="w-36 text-center animate-pulse" />
       </div>
     </>
   )
