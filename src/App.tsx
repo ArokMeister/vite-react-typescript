@@ -8,7 +8,7 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path="/vite-react-typescript" element={ <ProductPage /> }/>
+        <Route path="/" element={ <ProductPage /> }/>
         <Route path="/about" element={ <AboutPage /> }/>
       </Routes>
     </>
