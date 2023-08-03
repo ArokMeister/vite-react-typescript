@@ -25,9 +25,23 @@ export function useProducts() {
     }
   }
 
+  async function deleteProduct(productId: number) {
+    try {
+      setError('')
+      setLoading(true)
+      await axios.delete(`https://fakestoreapi.com/carts/${productId}`)
+      setProducts(prev => prev.filter(product => product.id !== productId))
+      setLoading(false)
+    } catch(e: unknown) {
+      const error = e as AxiosError
+      setLoading(false)
+      setError(error.message)
+    }
+  }
+
   useEffect(() => {
     getProducts()
   }, [])
 
-  return { products, error, loading, addProduct }
+  return { products, error, loading, addProduct, deleteProduct }
 }

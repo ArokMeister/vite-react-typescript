@@ -11,6 +11,7 @@ export function CreateProduct({ onCreate }: CreateProductProps) {
   
   const [error, setError] = useState('')
   const [productData, setProductData] = useState<IProduct>({
+    id: 1,
     title: "",
     description: "",
     price: "",

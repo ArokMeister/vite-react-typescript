@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { ModalContext } from "../context/ModalContext"
 import { useProducts } from "../hooks/products"
 import { IProduct } from "../modules"
@@ -9,7 +9,8 @@ import { Modal } from "../components/Modal"
 import { CreateProduct } from "../components/CreateProduct"
 
 export function ProductPage() {
-  const { products, error, loading, addProduct } = useProducts()
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const { products, error, loading, addProduct, deleteProduct  } = useProducts()
   const { isOpen, open, close } = useContext(ModalContext)
 
   const handlerCreate = (product: IProduct) => {
@@ -23,8 +24,16 @@ export function ProductPage() {
       <div className='grid grid-cols-3 gap-4 max-w-7xl mx-auto p-5'>
         {loading && <Preloader />}
         {error && <ErrorMessage error={error} />}
-        {products.map(product => 
-          <Product product={product} key={product.id} />)
+        {products.map((product, index) => 
+          <Product 
+            product={product} 
+            key={product.id} 
+            isOpen={index === openIndex}
+            onToggle={() => {
+              setOpenIndex(index === openIndex ? null : index) 
+            }}
+            onDelete={() => deleteProduct(product.id)}
+          />)
         }
         {isOpen && 
           <Modal onClose={close} title="Create new product">
