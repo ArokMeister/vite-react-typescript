@@ -29,7 +29,7 @@ export function useProducts() {
     try {
       setError('')
       setLoading(true)
-      await axios.delete(`https://fakestoreapi.com/carts/${productId}`)
+      await axios.delete(`https://fakestoreapi.com/products/${productId}`)
       setProducts(prev => prev.filter(product => product.id !== productId))
       setLoading(false)
     } catch(e: unknown) {
